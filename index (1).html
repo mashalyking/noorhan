@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-equiti | Fractional CFO Services for Startups, SMEs & Growth Companies</title>
+    <meta name="description" content="Fractional CFO services that help founders make smarter financial decisions, maximize profitability, and scale sustainably.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e40af",
+                        secondary: "#0f172a",
+                        accent: "#3b82f6",
+                        light: "#f8fafc"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-divider {
+            border-bottom: 2px solid #e2e8f0;
+            margin: 4rem 0;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .package-card {
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .package-card:hover {
+            border-color: #3b82f6;
+        }
+        .package-card.featured {
+            border-color: #3b82f6;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .feature-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+        }
+        .timeline-step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: -1;
+        }
+        @media (min-width: 768px) {
+            .timeline-step:before {
+                display: block;
+            }
+        }
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .badge-popular {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+        .tab-button {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .tab-button:not(.active) {
+            background-color: #f1f5f9;
+            color: #64748b;
+        }
+        .tab-button:not(.active):hover {
+            background-color: #e2e8f0;
+        }
+        .service-title {
+            font-weight: 700;
+            color: #1e40af;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .included-note {
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-gray-800">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg"></div>
+                    <span class="text-xl font-bold text-gray-900">co-equiti</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
+                    <a href="#timeline" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Timeline</a>
+                    <a href="#packages" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Packages</a>
+                    <a href="#mission-vision" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Mission & Vision</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Q&A</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+                <button onclick="scrollToContact()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    Book a free Consultation
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium mb-6">
+                    <i class="fas fa-building mr-2"></i>
+                    Supporting Startups, SMEs & Growth Companies
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    CFO Capabilities. <span class="text-blue-600">Without CFO Cost.</span>
+                </h1>
+                <p class="text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
+                    Co-equiti provides Fractional CFO services that help founders make smarter financial decisions, maximize profitability, and scale sustainably.
+                </p>
+                <button onclick="scrollToContact()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+                    Book a free Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- The Challenge Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">The Challenge</h2>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6">Why Growing Companies Struggle Financially</h3>
+                <p class="text-lg text-gray-700 mb-8">
+                    Most growth-stage companies lack access to advanced financial expertise. Hiring a full-time CFO is costly, yet critical financial decisions cannot wait.
+                </p>
+                <p class="text-lg text-gray-700 mb-10">
+                    Without strategic financial leadership, businesses face:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-exclamation-circle text-red-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-900">Poor cash flow visibility</h4>
+                        </div>
+                        <p class="text-gray-600">Lack of real-time insight into cash position and future needs.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-line text-yellow-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-900">Weak financial planning</h4>
+                        </div>
+                        <p class="text-gray-600">Inadequate budgeting and forecasting for sustainable growth.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-bar text-purple-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-900">Limited performance tracking</h4>
+                        </div>
+                        <p class="text-gray-600">No clear KPIs to measure business health and progress.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-handshake text-green-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-900">Unpreparedness for fundraising</h4>
+                        </div>
+                        <p class="text-gray-600">Lack of investor-ready financials and bank financing preparation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Our Solution Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Solution</h2>
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-10">
+                    <p class="text-xl text-gray-800 italic border-l-4 border-blue-600 pl-6">
+                        "Fractional CFO services provide you with level financial expertise at a fraction of the cost, delivering strategic guidance when you need it most."
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Strategic Planning</h4>
+                        <p class="text-gray-600">Turn vision into actionable financial roadmaps</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-green-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Data-Driven Decisions</h4>
+                        <p class="text-gray-600">Make informed choices based on real-time insights</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-expand-alt text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Scalable Growth</h4>
+                        <p class="text-gray-600">Services that evolve with your business needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Our Mission & Vision</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Mission -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-bullseye text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            To bridge the gap between accounting and strategy — helping businesses not only understand what happened but prepare confidently for what's next.
+                        </p>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-eye text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We help you make better financial decisions, confident in front of investors, optimize cash flow, and accelerate growth — at a fraction of the cost of a full-time CFO.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Implementation Timeline Section -->
+    <section id="timeline" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Implementation Timeline</h2>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-12 text-center">From Assessment to Results in 30 Days</h3>
+                
+                <div class="relative">
+                    <!-- Timeline Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 timeline-step">
+                        <!-- Step 1 -->
+                        <div class="relative z-10">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6">
+                                    <span class="text-white text-2xl font-bold">1</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">Step 1: Assessment</h4>
+                                <div class="bg-blue-50 p-6 rounded-lg">
+                                    <ul class="text-left space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-file-alt text-blue-600 mt-1 mr-3"></i>
+                                            <span>Submit company's financial health report</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-clipboard-check text-blue-600 mt-1 mr-3"></i>
+                                            <span>Propose suitable package according to company needs</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative z-10">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mb-6">
+                                    <span class="text-white text-2xl font-bold">2</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">Step 2: Setup and Integration</h4>
+                                <div class="bg-green-50 p-6 rounded-lg">
+                                    <ul class="text-left space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-plug text-green-600 mt-1 mr-3"></i>
+                                            <span>Connect financial systems</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-cogs text-green-600 mt-1 mr-3"></i>
+                                            <span>Configure reporting and analytics tools</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-sync-alt text-green-600 mt-1 mr-3"></i>
+                                            <span>Establish data integration workflows</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative z-10">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mb-6">
+                                    <span class="text-white text-2xl font-bold">3</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">Step 3: Delivery</h4>
+                                <div class="bg-purple-50 p-6 rounded-lg">
+                                    <div class="text-center mb-4">
+                                        <div class="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-semibold">
+                                            <i class="fas fa-bolt mr-2"></i>
+                                            Tangible results within 30 days
+                                        </div>
+                                    </div>
+                                    <ul class="text-left space-y-3">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-chart-line text-purple-600 mt-1 mr-3"></i>
+                                            <span>First monthly financial reports delivered</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-lightbulb text-purple-600 mt-1 mr-3"></i>
+                                            <span>Actionable insights and recommendations</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-road text-purple-600 mt-1 mr-3"></i>
+                                            <span>Clear financial roadmap established</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Connector (visible on desktop) -->
+                    <div class="hidden md:block absolute top-10 left-0 right-0 h-0.5 bg-gray-200 -z-10"></div>
+                </div>
+
+                <!-- Timeline Summary -->
+                <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-6 md:mb-0">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-calendar-check text-white text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-900">30-Day Guarantee</h4>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <p class="text-lg text-gray-700">
+                                Our streamlined implementation process ensures you see tangible results within 30 days. 
+                                From initial assessment to full integration and first deliverables, we work efficiently 
+                                to provide immediate value to your business.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- What We Do Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">What We Do<span class="text-blue-600">?</span></h2>
+                
+                <!-- Tabs for Services -->
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
+                    <button id="startups-tab" class="tab-button active" onclick="showServices('startups')">
+                        <i class="fas fa-rocket mr-2"></i> For Startups & Growth Companies
+                    </button>
+                    <button id="smes-tab" class="tab-button" onclick="showServices('smes')">
+                        <i class="fas fa-building mr-2"></i> For SMEs
+                    </button>
+                </div>
+
+                <!-- Startups Services -->
+                <div id="startups-services" class="services-content">
+                    <!-- Bookkeeping & Tax Service -->
+                    <div class="service-card bg-white rounded-xl shadow-lg p-8 mb-12">
+                        <div class="flex flex-col md:flex-row items-start md:items-center mb-8">
+                            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                                <i class="fas fa-book text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-gray-900">Bookkeeping & Tax</h4>
+                                <p class="text-lg text-gray-600 mt-2">A solid financial foundation built on accuracy and compliance.</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <ul class="feature-list space-y-3">
+                                    <li class="text-gray-700">Transaction recording and organization</li>
+                                    <li class="text-gray-700">Monthly financial statements</li>
+                                    <li class="text-gray-700">Monthly Bank reconciliation</li>
+                                    <li class="text-gray-700">Accounting compliance and standards</li>
+                                    <li class="text-gray-700">Reliable data for analysis and decision-making</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Services Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Financial Planning & Analysis (FP&A) -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-6">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Financial Planning & Analysis</h4>
+                            <div class="text-gray-600 mb-4">
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Preparing budgets and setting strategic financial goals</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>3-5 year financial models to turn vision into a financial roadmap</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Scenario Analysis (What-if Analysis)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Sensitivity analysis to measure the impact of variables</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Variance analysis between actual and planned</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Performance monitoring against objectives</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Business Intelligence -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-6">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-purple-600 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Business Intelligence</h4>
+                            <div class="text-gray-600 mb-4">
+                                <div class="mb-3">
+                                    <h5 class="font-semibold text-gray-800 mb-2">Financial Indicators (KPIs):</h5>
+                                    <ul class="space-y-1 ml-4">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Liquidity</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Profitability</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Growth Rates</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Operational Efficiency</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Return on Assets</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800 mb-2">Business Performance Indicators:</h5>
+                                    <ul class="space-y-1 ml-4">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Burn Rate & Unit Economics</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Runway</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Monthly/Annual Recurring Revenue (MRR/ARR)</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Churn Rate</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Sales Performance</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Inventory Performance</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Customer Profitability</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-purple-500 text-xs mt-1 mr-2"></i>
+                                            <span>Branch / Department Performance</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Corporate Finance -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-6">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-briefcase text-red-600 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Corporate Finance</h4>
+                            <div class="text-gray-600 mb-4">
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Cash Flow and Liquidity Management</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Risk Management</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Cost Optimization</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Strategic Planning for Growth</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Capital Restructuring</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                                        <span>Mergers, Acquisitions, and Exit Strategies</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Fundraising Support -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-6">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-handshake text-yellow-600 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Fundraising Support</h4>
+                            <p class="text-gray-600 mb-4">A true partnership on the investment journey, step by step.</p>
+                            <div class="text-gray-600">
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+                                        <span>Investor-Ready Financials</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+                                        <span>Pitch Deck Financial Section</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+                                        <span>Data room financials setup</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+                                        <span>Term Sheet Review - Financial implications of deal terms</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMEs Services -->
+                <div id="smes-services" class="services-content hidden">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center bg-green-100 text-green-800 px-6 py-3 rounded-full font-semibold mb-4">
+                            <i class="fas fa-building mr-2"></i>
+                            Specialized Services for Small & Medium Enterprises
+                        </div>
+                        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                            We understand the unique financial challenges faced by SMEs. Our specialized services are designed to help you build strong banking relationships, secure growth financing, and manage financial risks effectively.
+                        </p>
+                    </div>
+
+                    <!-- SME Services Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Credit Assessment -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-bar text-blue-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-2xl font-bold text-gray-900">Credit Assessment</h4>
+                            </div>
+                            <div class="text-gray-700">
+                                <p class="mb-4">Comprehensive credit evaluation and risk assessment services to help you:</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Evaluate your creditworthiness for financing opportunities</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Identify and mitigate financial risks</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Prepare comprehensive credit applications</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Optimize your financial profile for better loan terms</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Monitor and improve your credit standing over time</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Bank Relationship Management -->
+                        <div class="service-card bg-white rounded-xl shadow-lg p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-university text-green-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-2xl font-bold text-gray-900">Bank Relationship Management</h4>
+                            </div>
+                            <div class="text-gray-700">
+                                <p class="mb-4">Strategic banking partnership development and management services:</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Build and maintain strong relationships with financial institutions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Negotiate better financing terms and conditions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Access working capital and expansion funding</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Streamline banking operations and documentation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Manage multiple banking relationships effectively</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                        <span>Ensure compliance with banking regulations and requirements</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Our Packages Section -->
+    <section id="packages" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Our Packages</h2>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-12 text-center">Choose the Right Plan for Your Business Stage</h3>
+
+                <!-- Packages Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Starter Plan -->
+                    <div class="package-card bg-white rounded-xl p-8 relative">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Starter Plan</h4>
+                            <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                                <i class="fas fa-seedling mr-2"></i>
+                                Early Stage
+                            </div>
+                            <p class="text-gray-600 mb-4">Perfect for businesses establishing their financial foundation</p>
+                        </div>
+
+                        <!-- Services Table -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-4">Services Included:</h5>
+                            <div class="space-y-6">
+                                <!-- Bookkeeping & Tax Section -->
+                                <div>
+                                    <h6 class="service-title">Bookkeeping & Tax</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Transaction recording and organization</div>
+                                        <div class="text-gray-700">Monthly financial statements</div>
+                                        <div class="text-gray-700">Monthly Bank reconciliation</div>
+                                        <div class="text-gray-700">Accounting compliance and standards</div>
+                                    </div>
+                                </div>
+
+                                <!-- FP&A Section -->
+                                <div>
+                                    <h6 class="service-title">FP&A</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Monthly financial planning (Three-year horizon)</div>
+                                        <div class="text-gray-700">Monthly Financial analysis (Variance analysis)</div>
+                                        <div class="text-gray-700">Quarterly advisory meeting with the finance team</div>
+                                        <div class="text-gray-700">Monthly financial health report</div>
+                                    </div>
+                                </div>
+
+                                <!-- Business Intelligence Section -->
+                                <div>
+                                    <h6 class="service-title">Business Intelligence</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Business performance KPIs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Outcome -->
+                        <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-2">Outcome:</h5>
+                            <p class="text-gray-700">Build a clear financial structure, understand your cash flow, and how's the conversion rate of your business</p>
+                        </div>
+
+                        <!-- Best For -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-3">Best For:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Pre-seed to $500K revenue</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">1-10 employees</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Single market presence</span>
+                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Basic financial needs</span>
+                            </div>
+                        </div>
+
+                        <button onclick="scrollToContact()" class="w-full bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- Growth Plan (Most Popular) -->
+                    <div class="package-card bg-white rounded-xl p-8 relative featured">
+                        <div class="badge-popular">MOST POPULAR</div>
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Growth Plan</h4>
+                            <div class="inline-flex items-center bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Scaling Stage
+                            </div>
+                            <p class="text-gray-600 mb-4">Ideal for businesses actively scaling and seeking investment</p>
+                        </div>
+
+                        <!-- Included Note -->
+                        <div class="included-note mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="font-semibold text-gray-800">Includes all Starter Plan services, plus:</span>
+                            </div>
+                        </div>
+
+                        <!-- Services Table -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-4">Additional Services:</h5>
+                            <div class="space-y-6">
+                                <!-- FP&A Section -->
+                                <div>
+                                    <h6 class="service-title">FP&A</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Monthly tracking of financial planning</div>
+                                        <div class="text-gray-700">Monthly financial analysis</div>
+                                        <div class="text-gray-700">Monthly advisory meeting with the CFO</div>
+                                        <div class="text-gray-700">Training session on financial literacy</div>
+                                    </div>
+                                </div>
+
+                                <!-- Business Intelligence Section -->
+                                <div>
+                                    <h6 class="service-title">Business Intelligence</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Business performance KPIs</div>
+                                        <div class="text-gray-700">Financial KPIs</div>
+                                    </div>
+                                </div>
+
+                                <!-- Corporate Finance Section -->
+                                <div>
+                                    <h6 class="service-title">Corporate Finance</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Cash Flow & Liquidity Management</div>
+                                        <div class="text-gray-700">Risk Management</div>
+                                        <div class="text-gray-700">Cost optimization</div>
+                                    </div>
+                                </div>
+
+                                <!-- Fundraising Support Section -->
+                                <div>
+                                    <h6 class="service-title">Fundraising Support</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Investor pitch deck financial sections</div>
+                                        <div class="text-gray-700">Financial due diligence preparation services</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Best For -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-3">Best For:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">$500K - $5M revenue</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">10-50 employees</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Actively fundraising or scaling</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Multi-market operations</span>
+                            </div>
+                        </div>
+
+                        <button onclick="scrollToContact()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Choose Growth Plan
+                        </button>
+                    </div>
+
+                    <!-- Executive Plan -->
+                    <div class="package-card bg-white rounded-xl p-8 relative">
+                        <div class="text-center mb-8">
+                            <h4 class="text-2xl font-bold text-gray-900 mb-2">Executive Plan</h4>
+                            <div class="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                                <i class="fas fa-crown mr-2"></i>
+                                Enterprise Stage
+                            </div>
+                            <p class="text-gray-600 mb-4">Comprehensive financial strategy for established enterprises</p>
+                        </div>
+
+                        <!-- Included Note -->
+                        <div class="included-note mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                <span class="font-semibold text-gray-800">Includes all Growth Plan services, plus:</span>
+                            </div>
+                        </div>
+
+                        <!-- Services Table -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-4">Additional Services:</h5>
+                            <div class="space-y-6">
+                                <!-- FP&A Section -->
+                                <div>
+                                    <h6 class="service-title">FP&A</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">3–5 year comprehensive financial strategy</div>
+                                        <div class="text-gray-700">Advanced financial analysis</div>
+                                        <div class="text-gray-700">Bi-weekly strategic meetings</div>
+                                    </div>
+                                </div>
+
+                                <!-- Business Intelligence Section -->
+                                <div>
+                                    <h6 class="service-title">Business Intelligence</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Advanced business performance KPIs</div>
+                                        <div class="text-gray-700">Financial KPIs dashboard</div>
+                                    </div>
+                                </div>
+
+                                <!-- Corporate Finance Section -->
+                                <div>
+                                    <h6 class="service-title">Corporate Finance</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Capital restructuring</div>
+                                        <div class="text-gray-700">M&A and exit strategies</div>
+                                        <div class="text-gray-700">Advanced cap table modeling</div>
+                                    </div>
+                                </div>
+
+                                <!-- Fundraising Support Section -->
+                                <div>
+                                    <h6 class="service-title">Fundraising Support</h6>
+                                    <div class="space-y-2 ml-4">
+                                        <div class="text-gray-700">Investor relations & VC negotiation support</div>
+                                        <div class="text-gray-700">Multi-entity & multi-country support</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Best For -->
+                        <div class="mb-8">
+                            <h5 class="font-semibold text-gray-900 mb-3">Best For:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Revenue $5M+</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">50+ employees</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">GCC expansion</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Exit or acquisition planning</span>
+                            </div>
+                        </div>
+
+                        <button onclick="scrollToContact()" class="w-full bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                            Contact for Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Q&A Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-12 text-center">Get Answers to Common Questions</h3>
+
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">What is a Fractional CFO?</h4>
+                                <p class="text-gray-700">
+                                    A Fractional CFO is a senior financial expert who provides part-time or project-based strategic finance leadership — giving your business access to high-level financial guidance without the full-time cost.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">How is Co-equiti different from an accounting firm or financial advisor?</h4>
+                                <p class="text-gray-700 mb-2">
+                                    Accounting firms focus on recording and compliance. Financial advisors often focus on investments.
+                                </p>
+                                <p class="text-gray-700">
+                                    Co-equiti, as a Fractional CFO, focuses on strategy — using your financial data to drive growth, improve profitability, and support long-term decision-making.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">What is the difference between this and my accountant/bookkeeper?</h4>
+                                <p class="text-gray-700 mb-2">
+                                    <strong>The Accountant:</strong> "This is last month's profit and loss statement."
+                                </p>
+                                <p class="text-gray-700 mb-2">
+                                    <strong>The Interim CFO:</strong> "Based on trends, here are the projections for the next quarter, and here's what we need to do differently to align with the strategy."
+                                </p>
+                                <p class="text-gray-700">
+                                    We complement your current accounting team, we don't replace it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">What systems/tools do we need?</h4>
+                                <p class="text-gray-700 mb-2">
+                                    We work with what you have. Accounting software: QuickBooks, Xero, Sage, Zoho Books, and others.
+                                </p>
+                                <p class="text-gray-700">
+                                    We provide our own software and analytical tools. No additional purchases required.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">What happens if we need to pause the service?</h4>
+                                <p class="text-gray-700">
+                                    We understand that the nature of business can be unpredictable. You can cancel your subscription with 30 days' notice. You can pause the service for up to 3 months (in exceptional circumstances) and resume at any time. No penalties or complications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="faq-item pb-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-blue-600 font-bold">6</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">How do we measure success?</h4>
+                                <p class="text-gray-700 mb-2">
+                                    We will define success metrics together in advance:
+                                </p>
+                                <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                    <li><strong>Financial criteria:</strong> improved profitability, increased funding runway, successful fundraising</li>
+                                    <li><strong>Strategic criteria:</strong> progress towards key objectives</li>
+                                    <li><strong>Satisfaction:</strong> your confidence in financial management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Ready to Transform Your Financial Strategy?</h2>
+                <h3 class="text-2xl font-semibold text-blue-600 mb-12 text-center">Book a Free Consultation Today</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-6">Get in Touch</h4>
+                            
+                            <!-- Phone Numbers -->
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Primary Contact (UAE)</p>
+                                        <a href="tel:+971586329909" class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors">+971 58 632 9909</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone-alt text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Secondary Contact (Egypt)</p>
+                                        <a href="tel:+201006906050" class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors">+20 100 690 6050</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-center mb-8">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Email Address</p>
+                                    <a href="mailto:info@co-equiti.com" class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors">info@co-equiti.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Support Info -->
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-building text-blue-600 mr-3"></i>
+                                    <h5 class="font-semibold text-gray-900">We Support:</h5>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Startups</span>
+                                    <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">SMEs</span>
+                                    <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Growth Companies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg p-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-6">Schedule Your Consultation</h4>
+                            <form id="consultationForm" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                                    <input type="text" id="company" name="company" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">What would you like to discuss?</label>
+                                    <textarea id="message" name="message" rows="4" 
+                                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"></textarea>
+                                </div>
+                                <button type="submit" 
+                                        class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                    Book a free Consultation
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-white rounded-lg"></div>
+                        <span class="text-xl font-bold">co-equiti</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Strategic financial leadership for startups, SMEs and growth-stage companies — without hiring a full-time CFO.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#timeline" class="text-gray-400 hover:text-white transition-colors">Timeline</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">Q&A</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#startups" class="text-gray-400 hover:text-white transition-colors">For Startups</a></li>
+                        <li><a href="#smes" class="text-gray-400 hover:text-white transition-colors">For SMEs</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-3"></i>
+                            <a href="tel:+971586329909" class="text-gray-400 hover:text-white transition-colors">+971 58 632 9909</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-3"></i>
+                            <a href="mailto:info@co-equiti.com" class="text-gray-400 hover:text-white transition-colors">info@co-equiti.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Co-equiti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define data at the beginning
+        const servicesData = {
+            "startups": {
+                "title": "For Startups & Growth Companies",
+                "contentId": "startups-services"
+            },
+            "smes": {
+                "title": "For SMEs",
+                "contentId": "smes-services"
+            }
+        };
+
+        // Service Tabs Functionality
+        function showServices(serviceType) {
+            // Hide all service content
+            document.querySelectorAll('.services-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+                button.classList.add('bg-gray-100', 'text-gray-700');
+                button.classList.remove('bg-blue-600', 'text-white');
+            });
+            
+            // Show selected service content
+            const contentId = servicesData[serviceType].contentId;
+            document.getElementById(contentId).classList.remove('hidden');
+            
+            // Add active class to selected tab
+            const tabId = serviceType + '-tab';
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+            activeTab.classList.remove('bg-gray-100', 'text-gray-700');
+        }
+
+        // Smooth scroll to contact section
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Form submission handler
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            };
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show a success message
+            alert('Thank you for your interest! We will contact you within 24 hours to schedule your free consultation.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Initialize the page with startups services visible
+        document.addEventListener('DOMContentLoaded', function() {
+            showServices('startups');
+        });
+
+        // Navigation smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
